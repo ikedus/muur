@@ -4,6 +4,7 @@ define('DATABASE_HOST', 'localhost');
 define('DATABASE_NAME', 'muur');
 define('DATABASE_USER', 'root');
 define('DATABASE_PASSWORD', '');
+define('URL', 'http://localhost/muur/')
 
 
   ?>

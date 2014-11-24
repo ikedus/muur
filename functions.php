@@ -39,7 +39,7 @@ function login($data)
 	else {
 		$_SESSION["alert"] = 'de gebruiker die u heeft ingevoerd is niet gevonden';
 	}
-	header('location: index.php');
+	header('location:'. URL);
 };
 function registreren($data)
 {	
@@ -87,7 +87,7 @@ function registreren($data)
 		$stmt->bindParam(':id', $id, PDO::PARAM_STR);
 		$stmt->execute();
 		$_SESSION['alert'] = "je kan nu inloggen met als gebruikersnaam: ". $data[email] . " en u opgegeven wachtwoord";
-		header('location: index.php');
+		header('location:' . URL);
 	} else {
 		$tpl->prepare();
 		$tpl->newBlock('alert');
@@ -120,7 +120,7 @@ function post($data)
 	$stmt->bindParam(':datum', $date, PDO::PARAM_INT);
 	$stmt->bindParam(':gebruiker_id', $_SESSION['login'], PDO::PARAM_INT);
 	$stmt->execute();
-	header('location: http://localhost/muur/');
+	header('location:' . URL);
 };
 
 function wall()
@@ -204,7 +204,7 @@ function deletePost($id)
 	$stmt = $db->prepare($sql);
 	$stmt->bindParam(':id', $id, PDO::PARAM_INT);
 	$stmt->execute();
-	header('location: http://localhost/muur/');
+	header('location:' . URL);
 };
 
 function showAlerts()
