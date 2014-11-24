@@ -1,0 +1,10 @@
+Options -MultiViews
+
+
+RewriteEngine On    # Turn on the rewriting engine
+RewriteBase /muur/
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond  %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule    ^(.+)$    index.php?p1=$1    [NC,L]
+ 

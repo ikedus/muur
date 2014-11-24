@@ -1,0 +1,31 @@
+.main-section {
+	padding: 1em;
+}
+body {
+	background-color: #3b5998;
+	color: white;
+}
+body * {
+	color:black;
+}
+
+.side-nav>.row,
+.content>.row {
+	background-color:white;
+	color:black;
+	padding:1em;
+	margin-top: 1em;
+}
+
+.content>.row:first-child {
+	margin-top:0;
+}
+
+
+.side-nav {
+	background-color: white;
+	padding:1em;
+}
+.dropdown li.heading{
+	padding-left:0.5em;
+}

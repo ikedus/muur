@@ -1,0 +1,178 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>De muur | overzicht</title>
+      <link rel="stylesheet" href="css/foundation.css" />
+      <link rel="stylesheet" href="css/app.css" />
+      <script src="js/vendor/modernizr.js"></script>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <script>
+    	$(function(){
+
+    		function center () {
+    			if ($(document).width() > 641) {
+    		var divnum = $(".main-section .row:first").children().lenght;
+    		var divheight = $(".main-section .row:first").height();
+    		var windowheight = $(document).height() 
+    		console.log(divnum);
+    		console.log(windowheight);
+    		var paddingheight = (windowheight/2) - (divheight/2);
+    		console.log(paddingheight);
+
+    		$(".main-section .row:first").css("padding-top", paddingheight);
+    		} else{
+    			$(".main-section .row:first").css("padding-top", 0);	
+    		};
+    		};
+    		
+    		center();
+
+    		$(window).resize(function(){
+    			center()
+    		});
+    	})
+      </script>
+    </head>
+    <body>
+        <nav class="top-bar" data-topbar role="navigation">
+           <ul class="title-area">
+            <li class="name">
+                <h1><a href="#">de muur</a></h1>
+            </li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+           </ul>
+        
+           <section class="top-bar-section">
+            <ul class="right">
+              <!-- START BLOCK : login -->
+                <li class="has-form signinform">
+                  <form action="#" method="post">
+                    <div class="row collapse">
+                      <div class="medium-6 columns username">
+                        <input type="text" placeholder="e-mail" name="username">
+                      </div>
+                      <div class="medium-4 columns password">
+                        <input type="text" placeholder="wachtwoord" name="password">
+                      </div>
+                      <div class="small-12 medium-2 columns">
+                        <input type="submit" value="Login" name="login" class="button small-12 columns">
+                      </div>
+                    </div>
+                  </form>
+                </li>
+                <li class="divider show-for-small-only"></li>
+              <!-- END BLOCK : login -->
+                <li class="has-dropdown show-for-small-only">
+                    <a href="#" class="heading">heey</a>
+                  <ul class="dropdown">
+                    <li class="heading">lorem</li>
+                    <li><a href="#">ipsum</a></li>
+                    <li><a href="#">dolor</a></li>
+                    <li><a href="#">sit</a></li>
+                    <li><a href="#">amet</a></li>
+                    <li class="heading">consectur</li>
+                    <li><a href="#">adipicing</a></li>
+                    <li><a href="#">elit</a></li>
+                    <li><a href="#">facilis</a></li>
+                    <li><a href="#">ducimus</a></li>
+                    <li class="heading">debitis</li>
+                    <li><a href="#">incedent</a></li>
+                    <li><a href="#">eos</a></li>
+                    <li><a href="#">lure</a></li>
+                    <li><a href="#">excepturi</a></li>
+                  </ul>
+                </li>
+        
+            </ul>
+           </section>
+        </nav>
+        <div class="main-section">
+            <div class="row">
+            	<div class="medium-4 columns hide-for-small">
+        		<ul class="side-nav">
+        			<li class="heading">lorem</li>
+        			<li><a href="#">ipsum</a></li>
+        			<li><a href="#">dolor</a></li>
+        			<li><a href="#">sit</a></li>
+        			<li><a href="#">amet</a></li>
+        			<li class="heading">consectur</li>
+        			<li><a href="#">adipicing</a></li>
+        			<li><a href="#">elit</a></li>
+        			<li><a href="#">facilis</a></li>
+        			<li><a href="#">ducimus</a></li>
+        			<li class="heading">debitis</li>
+        			<li><a href="#">incedent</a></li>
+        			<li><a href="#">eos</a></li>
+        			<li><a href="#">lure</a></li>
+        			<li><a href="#">excepturi</a></li>
+        		</ul>
+            	</div>
+            	<div class="medium-8 columns">
+        		<div class="row">
+        			<div class="small-12 columns" style="background-color:white;color:black;padding:1em;margin-bottom:1em;">
+        				<div class="row">
+        					<div class="small-2 columns"><img src="#" alt="" width="128" height="128"></div>
+        					<div class="small-10 columns">
+        						<div class="row">
+        							<div class="small-12 columns">lorem ipsum dolor sit amet</div>
+        							<div class="small-12 columns">lorem ipsum dolor sit amet</div>
+        						</div>
+        					</div>
+        				</div>
+        				<div class="row">
+        					<div class="small-12 columns"><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non fugit assumenda fugiat commodi facilis aliquid consectetur error earum, et nam id maiores animi laboriosam inventore sequi quos maxime temporibus unde.</div>
+        					<div>Perferendis qui facilis quasi voluptatibus aliquam unde consequatur nobis facere voluptates et odio perspiciatis maiores porro, similique eligendi sed doloribus, omnis, quas accusantium accusamus quis nihil, tempore repellendus nisi! Ut.</div>
+        					<div>Repellat, voluptatem dicta, consequuntur nostrum temporibus ipsum quia similique expedita cumque tenetur dolorem architecto magni. Dicta atque excepturi a, totam quidem aperiam architecto obcaecati reprehenderit illum itaque, odit, voluptatem dolor!</div></div>
+        				</div>
+        			</div>
+        		</div>
+        		<div class="row">
+        			<div class="small-12 columns" style="background-color:white;color:black;padding:1em;margin-bottom:1em;">
+        				<div class="row">
+        					<div class="small-2 columns"><img src="#" alt="" width="128" height="128"></div>
+        					<div class="small-10 columns">
+        						<div class="row">
+        							<div class="small-12 columns">lorem ipsum dolor sit amet</div>
+        							<div class="small-12 columns">lorem ipsum dolor sit amet</div>
+        						</div>
+        					</div>
+        				</div>
+        				<div class="row">
+        					<div class="small-12 columns"><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam beatae placeat, et ducimus quo eos, illo excepturi dolor similique sunt veniam aperiam, laboriosam numquam quaerat asperiores ea vitae voluptatum sequi.</div>
+        					<div>Enim dolor maxime nulla reprehenderit blanditiis, accusantium porro deserunt veritatis provident magni similique voluptates labore ipsum, maiores. Quisquam ipsum et nihil, odit facere nostrum, expedita facilis tempore debitis quo voluptate!</div>
+        					<div>Molestiae saepe eaque, temporibus in repudiandae eos possimus? Alias, similique, ea? Iusto sed quod consectetur ducimus nemo veritatis vitae distinctio fugiat suscipit quae error illo, architecto expedita commodi. Explicabo, rerum.</div></div>
+        				</div>
+        			</div>
+        		</div>
+        		<div class="row">
+        			<div class="small-12 columns" style="background-color:white;color:black;padding:1em;margin-bottom:1em;">
+        				<div class="row">
+        					<div class="small-2 columns"><img src="#" alt="" width="128" height="128"></div>
+        					<div class="small-10 columns">
+        						<div class="row">
+        							<div class="small-12 columns">lorem ipsum dolor sit amet</div>
+        							<div class="small-12 columns">lorem ipsum dolor sit amet</div>
+        						</div>
+        					</div>
+        				</div>
+        				<div class="row">
+        					<div class="small-12 columns"><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis aut eius velit quaerat. Natus, voluptatem voluptates ut et explicabo nihil ea. Deleniti error itaque ex maxime iure voluptatibus, voluptatem atque.</div>
+        					<div>Voluptatem consequuntur perspiciatis explicabo dignissimos dicta blanditiis temporibus minus esse et cumque, est ipsa laboriosam minima molestiae, voluptatum neque eum magni placeat recusandae quibusdam dolorum repellat illum ab. Qui, alias.</div>
+        					<div>Quo omnis explicabo aliquam dolores sunt odit ad fugit, ut debitis maiores natus expedita officia, possimus, consectetur voluptatibus delectus voluptates! Ea et architecto aspernatur, dolores cum dolore, rerum sapiente corrupti!</div></div>
+        				</div>
+        			</div>
+        		</div>
+            	</div>
+            </div>
+        </div>
+        
+        <script src="js/vendor/jquery.js"></script>
+        <script src="js/foundation.min.js"></script>
+        <script src="js/foundation/foundation.topbar.js"></script>
+        <script>
+          $(document).foundation();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,131 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundation | Welcome</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <script src="js/vendor/modernizr.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+    	$(function(){
+
+    		function center () {
+    			if ($(document).width() > 641) {
+    		var divnum = $(".main-section .row:first").children().lenght;
+    		var divheight = $(".main-section .row:first").height();
+    		var windowheight = $(document).height() 
+    		console.log(divnum);
+    		console.log(windowheight);
+    		var paddingheight = (windowheight/2) - (divheight/2);
+    		console.log(paddingheight);
+
+    		$(".main-section .row:first").css("padding-top", paddingheight);
+    		} else{
+    			$(".main-section .row:first").css("padding-top", 0);	
+    		};
+    		};
+    		
+    		center();
+
+    		$(window).resize(function(){
+    			center()
+    		});
+    	})
+    </script>
+  </head>
+  <body>
+  <nav class="top-bar" data-topbar role="navigation">
+  	<ul class="title-area">
+  		<li class="name">
+  			<h1><a href="#">de muur</a></h1>
+  		</li>
+  		<li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+  	</ul>
+
+  	<section class="top-bar-section">
+  		<ul class="right">
+  			<li class="has-form signinform">
+    			<form action="index.php" method="post">
+      				<div class="row collapse">
+        				<div class="medium-6 columns username">
+          					<input type="text" placeholder="e-mail" name="username">
+        				</div>
+        				<div class="medium-4 columns password">
+          					<input type="text" placeholder="wachtwoord" name="password">
+        				</div>
+        				<div class="small-12 medium-2 columns">
+        					<input type="submit" value="Login" name="submit" class="button small-12 columns">
+        				</div>
+
+      				</div>
+			</li>
+    		
+			</form>
+  		</ul>
+  	</section>
+  </nav>
+<div class="main-section">
+    <div class="row">
+    	<div class="medium-push-8 medium-4 columns">
+    		
+    		<div class="row">
+                <form action="index.php" method="post" class="small-12 columns">
+                    <div class="row">
+                        <div class="small-6 columns"><input type="text" placeholder="naam"></div>
+                        <div class="small-6 columns"><input type="text" placeholder="achternaam"></div>
+                    </div>
+                    <div class="row">
+                        <div class="small-12 columns"><input type="text" placeholder="e-mail"></div>
+                    </div>
+                     <div class="row">
+                        <div class="small-6 columns"><input type="text" placeholder="wachtwoord"></div>
+                        <div class="small-6 columns"><input type="text" placeholder="herhaal wachtwoord"></div>
+                    </div>  
+                     <div class="row">
+                        <div class="small-4 columns"><input type="text" placeholder="DD"></div>
+
+                        <div class="small-4 columns"><input type="text" placeholder="MM"></div>
+
+                        <div class="small-4 columns"><input type="text" placeholder="JJJJ"></div>
+                    </div>  
+                    <div class="row">
+                        <div class="small-6 columns"><input type="text" placeholder="adres"></div>
+
+                        <div class="small-3 columns"><input type="text" placeholder="huisnummer"></div>
+
+                        <div class="small-3 columns"><input type="text" placeholder="toevoeging"></div>
+                    </div>
+                    <div class="row">
+                        <div class="small-4 columns"><input type="text" placeholder="postcode"></div>
+
+                        <div class="small-8 columns"><input type="text" placeholder="plaats"></div>
+                    </div>
+                    <div class="row">
+                         	<div class="small-12 columns">
+        					<input type="submit" value="registreren" name="submit" class="button small-12 columns">
+        				</div>
+                         </div>     
+                </form>
+            </div>
+        </div>
+    	<div class="medium-pull-4 medium-8 columns">
+    		<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi molestias tempore, rerum nam ratione consequuntur. Explicabo est odit maiores in, ullam quisquam sed ratione, fuga itaque tempora dolorem, voluptate perspiciatis.</div>
+    		<div>Saepe laborum ratione architecto, nesciunt nisi delectus dicta a recusandae vitae! Commodi, dolorum fuga deserunt mollitia repellendus sit id voluptate facere, neque sapiente doloribus blanditiis laboriosam, autem minus nemo deleniti!</div>
+    		<div>Laborum quibusdam perspiciatis beatae provident cupiditate ea mollitia, dignissimos illum at culpa magnam ducimus nam? Neque cupiditate maxime, excepturi, blanditiis quo pariatur fugit cum temporibus, dicta praesentium asperiores aspernatur incidunt!</div>
+    		<div>Ex aspernatur aperiam sapiente fugit quod voluptatibus! Delectus id saepe soluta adipisci laborum autem ea unde hic iusto, accusamus aspernatur deserunt voluptates assumenda facilis voluptate, iste fugiat ab reiciendis dolores.</div>
+    		<div>Minus tenetur illum quisquam quidem labore unde molestias ab id placeat, deserunt perspiciatis mollitia iure quos. Amet itaque, voluptatibus non asperiores, modi voluptas perspiciatis odit repudiandae molestiae distinctio inventore dolor?</div>
+    	</div>
+    	
+    </div>
+</div>
+    
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/foundation/foundation.topbar.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>
