@@ -4,10 +4,10 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>De muur | overzicht</title>
-	<link rel="stylesheet" href="./css/foundation.css" />
-	<link rel="stylesheet" href="./foundation-icons/foundation-icons.css" />
-	<link rel="stylesheet" href="./css/app.css" />
-	<script src="./js/vendor/modernizr.js"></script>
+	<link rel="stylesheet" href="http://localhost/muur/css/foundation.css" />
+	<link rel="stylesheet" href="http://localhost/muur/foundation-icons/foundation-icons.css" />
+	<link rel="stylesheet" href="http://localhost/muur/css/app.css" />
+	<script src="http://localhost/muur/js/vendor/modernizr.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script>
 /*$(function(){

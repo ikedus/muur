@@ -53,6 +53,15 @@ switch ($submit) {
 		return;
 		break;
 
+		case 'profiel':
+			if (!empty($parameters[1])) {
+				wall('profiel',$parameters[1]);
+			} else{
+				wall('profiel');
+			}
+			
+			break;
+
 		default:
 		if (isset($_SESSION['login'])) {
 			wall();

@@ -123,18 +123,21 @@ function post($data)
 	header('location:' . URL);
 };
 
-function wall()
+function wall($type = 'wall',$profile = null,$offset = 0,$view = 5)
 {
+	$profile = (!empty($profile)) ? $profile : $_SESSION['login'] ;
 	global $tpl;
 	global $db;
-
+	$where = ($type == 'profiel') ? ' WHERE gebruiker.id = ' .$profile." " : null ;
 	$sql = "SELECT post.*, gebruiker.id as gebruiker, persoon.voornaam, persoon.achternaam, persoon.avatar 
 	FROM post 
 	INNER JOIN gebruiker 
 	ON post.gebruiker_id=gebruiker.id 
 	INNER JOIN persoon 
-	ON gebruiker.persoon_id=persoon.id
-	ORDER BY post.datum DESC";
+	ON gebruiker.persoon_id=persoon.id"
+	.$where.
+	" ORDER BY post.datum DESC";
+
 	$stmt = $db->prepare($sql);
 	$stmt->execute();
 	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -152,46 +155,24 @@ function wall()
 	$tpl->assign("naam", $_SESSION['naam']);
 
 	foreach ($row as $row) {
-		
-
 		$content = ($row['status'] == 0) ? 'dit bericht is verwijderd' : $row['content'];
 		$naam = $row['voornaam'].' '.$row['achternaam'];
 
-		$nu = time();
-		if ($nu - $row['datum'] < 60) {
-			$sec = $nu- $row['datum'];
-			$datum = $sec . "s";
-		}
-		elseif ($nu - $row['datum'] < 60*60) {
-			$minuten = floor(($nu - $row['datum']) / 60);
-			$datum = $minuten."m";
-		}
-		elseif ($nu - $row['datum'] < 60*60*24) {
-			$uur = floor(($nu - $row['datum']) / (60*60));
-			$datum = $uur."u";
-		}
-		elseif ($nu - $row['datum'] < 60*60*24*7) {
-			$day = date('w',$row['datum']);
-			$dag = dag($day);
+		$datum = tijd($row['datum']);
 
-			
-
-
-
-			$datum = $dag;
-		}
 
 		$tpl->newBlock('item');
-		
+
 		$tpl->assign("img", $row['avatar']);
 		$tpl->assign("naam", $naam);
 		$tpl->assign("datum",  $datum);
 		$tpl->assign("content", $content);
-		if ($row['gebruiker'] == $_SESSION['login']){
+		if ($row['gebruiker'] == $_SESSION['login'] && $row['status'] != 0){
 			$tpl->newBlock('postdelete');
 			$tpl->assign("id", $row['id']);
 		}
-	};
+	}
+
 
 	$tpl->printToscreen();
 	return;
@@ -200,10 +181,23 @@ function wall()
 function deletePost($id)
 {
 	global $db;
-	$sql = "UPDATE post SET status=0 WHERE id=:id";
+
+	$sql = "SELECT gebruiker_id FROM post WHERE id=:id";
 	$stmt = $db->prepare($sql);
 	$stmt->bindParam(':id', $id, PDO::PARAM_INT);
 	$stmt->execute();
+	$result = $stmt->fetch();
+
+
+
+	if ($_SESSION['login'] == $result['persoon_id']) {
+		$sql = "UPDATE post SET status=0 WHERE id=:id";
+		$stmt = $db->prepare($sql);
+		$stmt->bindParam(':id', $id, PDO::PARAM_INT);
+		$stmt->execute();
+	} else {
+		$_SESSION['alert'] = '<p>je probeert een bericht te verwijderen die niet van jou is</p>';
+	}
 	header('location:' . URL);
 };
 
@@ -226,7 +220,31 @@ function showLogin()
 	$tpl->printToscreen();
 }
 
-function dag($day)
+function tijd($time)
+{
+	$nu = time();
+	if ($nu - $time < 60) {
+		$sec = $nu- $time;
+		$datum = $sec . "s";
+	}
+	elseif ($nu - $time < 60*60) {
+		$minuten = floor(($nu - $time) / 60);
+		$datum = $minuten."m";
+	}
+	elseif ($nu - $time < 60*60*24) {
+		$uur = floor(($nu - $time) / (60*60));
+		$datum = $uur."u";
+	}
+	elseif ($nu - $time < 60*60*24*7) {
+		$day = date('w',$time);
+		$datum = translateDay($day);
+	};
+
+	
+	return $datum;
+};
+
+function translateDay($day)
 {
 	switch ($day) {
 		case '0':$dag = 'zo'; break;
@@ -238,8 +256,7 @@ function dag($day)
 		case '6':$dag = 'za'; break;
 	}
 	return $dag;
-};
+}
 
 
 ?>
-

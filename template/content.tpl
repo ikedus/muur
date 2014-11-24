@@ -145,6 +145,27 @@
 			</ul>
 		</div>
 		<div class="medium-8 columns content" >
+	
+			<div class="row">
+				<div class="small-12 columns">
+
+					<div class="row">
+						<div class="small-12 columns">
+							<h4>dit is het profiel van: ...</h4>
+						</div>
+					</div>
+					<div class="row">
+						<div class="small-4 columns">
+							<img src="img/noAvatar.png" height="128" width="128" alt="avatar">
+						</div>
+						<div class="small-8 columns">
+							<div class="row">
+								<div class="small-12 columns"><b>voornaam achternaam</b></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
 			<div class="row">
 				<div class="small-12 columns">
@@ -185,6 +206,7 @@
 								<div class="small-12 columns">{content}</div>
 							</div>
 						</div>
+					</div>
 
 						<hr>
 						<div class="row">
@@ -204,7 +226,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					
 				</div>
 			</div>
 
